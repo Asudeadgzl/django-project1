@@ -35,14 +35,12 @@
             <div class="navbar-nav">
               {% if user.is_authenticated%}
               <form action="{% url 'logout' %}" method="POST">
-                {% csrf_token %}
-                <button type="submit" class="nav-item nav-link btn btn-link">Logout</button>
-              </form>
-
+              {% csrf_token %}
+              <button type="submit" class="nav-item nav-link btn btn-link">Logout</button>
               {% else %}
-                <a class="nav-item nav-link" href="{% url 'login'%}">Login</a>
-                <a class="nav-item nav-link" href="{% url 'register'%}">Register</a>
-                {% endif %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
             </div>
           </div>
         </div>
